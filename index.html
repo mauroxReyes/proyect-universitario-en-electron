@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <link href="./asset/css/materialize.css" rel="stylesheet">
+    <link href="./asset/css/scroll.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+    <style type="text/css">
+      /*
+        colores:
+        #805829 marron
+        #FFC885
+        #CC9755
+        #1C5F80
+        #56A5CC  azul
+      */
+
+    </style>
+    <title>IA: Project</title>
+  </head>
+  <body style="background:#FFC885;">
+    <header class="navbar-fixed black-text">
+      <nav style="background:#56A5CC;">
+        <ul class="right" style="margin-right:3%" >
+          <li>
+            <a class="sidenav-trigger" data-target="mau-menu" style="display:block;padding:10px;">
+              <img src="./asset/img/menu.png" style="width:auto;height:auto;max-height:40px;max-width:40px;">
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="sidenav" id="mau-menu">
+      <ul>
+        <li style="text-align:center;" class="flow-text">
+          Link's
+        </li>
+        <li>
+          <a class="waves-effect waves-light  modal-trigger" href="#hta">¿Que es HTA?</a>
+        </li>
+        <li>
+          <a class="waves-effect waves-light  modal-trigger" href="#about">Acerca de</a>
+        </li>
+        <li>
+          <a class="waves-effect waves-light modal-trigger" href="#formula">Formula</a>
+        </li>
+      </ul>
+    </div>
+
+    <div style="width:90vw;height:90vh;display:block;padding-top:20px;margin:auto">
+        <div style="text-align:center;">
+          <h3>Hyper tensor</h3>
+          <img src="./asset/img/brain.png" style="width:100px;height:100%;">
+          <!--Aqui va el form-->
+          <form class="container section">
+            <section class="row card" style="padding:10px">
+              <div class="input-field col s12">
+                 <h5 style="text-align:center;font-weight:500;">
+                    Calcular
+                  </h5>
+              </div>
+
+              <div class="input-field col s10">
+                <input id="sistolica" type="number"  step="1.00">
+                <label for="sistolica">TA sistólica</label>
+              </div>
+              <div class="col s2 flow-text" style="padding-top:5%">
+                mmHg
+              </div>
+
+              <div class="input-field col s10">
+                <input id="diastolica" type="number"  step="1.00">
+                <label for="diastolica">TA diastólica</label>
+              </div>
+              <div class="col s2 flow-text" style="padding-top:5%">
+                mmHg
+              </div>
+
+              <div class="input-field col s12">
+                <a class="waves-effect waves-light btn  modal-trigger" href="#resultado" id="calculador">Calcular</a>
+              </div>
+              <div class="input-field col s12">
+                <p class="" style="text-align:center">
+                  Ingrese los campos solicitados y presione calcular.
+                </p>
+              </div>
+
+            </section>
+          </form>
+        </div>
+    </div>
+
+
+  
+    
+    <!-- Modal Structure -->
+    <div id="hta" class="modal modal-fixed-footer" style="min-width:90%;">
+      <div class="modal-content">
+        <h4 style="text-align:center;">¿Que es HTA?</h4>
+        <p style="text-align:justify;" class=" flow-text">
+            La hipertensión arterial (HTA), es una enfermedad crónica caracterizada por un incremento continuo de las cifras de presión sanguínea en las arterias. Aunque no hay un umbral estricto que permita definir el límite entre el riesgo y la seguridad, de acuerdo con consensos internacionales, una presión sistólica sostenida por encima de 139 mmHg o una presión diastólica sostenida mayor de 89 mmHg, están asociadas con un aumento medible del riesgo de aterosclerosis y por lo tanto, se considera como una hipertensión clínicamente significativa.
+          </p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Salir</a>
+      </div>
+    </div>
+
+    <div id="formula" class="modal modal-fixed-footer" style="min-width:90%;">
+      <div class="modal-content">
+        <h4 style="text-align:center;">Formula y términos:</h4>
+        <p style="text-align:justify;" class="flow-text">
+           TA media = <br> TA diastólica + ((TA sistólica - TA diastólica) / 3)
+           <br><br>
+           <b>TA:</b> Tensión arterial.<br>
+           <b>TA media:</b> Tensión promedio.<br>
+           <b>TA diastólica:</b> Se refiere a la presión de la sangre en la arteria cuando el corazón se relaja entre latidos. Es la cifra inferior (y más baja) en una medición de la presión arterial. <br>
+
+           <b>TA sistólica:</b> Se refiere a la presión de la sangre en la arteria cuando se contrae el corazón. Es la cifra superior (y más alta) en una medición de la presión arterial. Presión arterial diastólica se refiere a la presión de la sangre en la arteria cuando el corazón se relaja entre latidos. <br>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Salir</a>
+      </div>
+    </div>
+
+  <div id="about" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <h4 style="text-align:left;">Objetivo</h4>
+        <p style="text-align:justify;" >
+            Elaborar un programa para la detección de hipertensión en adultos mayores en 
+            el lenguaje de programación javascript, esto va dirigido a los estudiantes de ING 
+            de  Sistemas  del  VII  Semestre  de  la  Universidad  Nacional  Experimental 
+            Politécnica  De  La  Fuerza  Armada  Bolivariana  Extensión  Punto  Fijo  –  Estado 
+            Falcón y del pueblo venezolano. 
+        </p>
+        <h4 style="text-align:left;" >Grupo</h4>
+            <ul style="text-align:justify;">
+              <li>Mauricio Reyes CI:28.363.429</li>
+              <li>Diego Chiquito CI:28.026.466</li>
+              <li>Karin Gómez CI:27.420.629</li>
+            </ul>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Salir</a>
+      </div>
+    </div>
+  <!-- resultado-->
+  <div id="resultado" class="modal modal-fixed-footer" style="min-width:90vw;min-height:80vh">
+      <div class="modal-content">
+        <h4 style="text-align:center;">Resultado</h4>
+        <p style="text-align:justify;" class="container flow-text">
+            <ul class="flow-text">
+              <li>
+                <b>TA media:</b> <span id="TA">Falta</span>
+              </li>
+              <li>
+                <b>Evaluación:</b> <span id="evaluacion">Falta</span>
+              </li>
+              <li>
+                <b>Recomendaciones:</b> <span id="recomendaciones">Falta</span>
+              </li>
+            </ul>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Salir</a>
+      </div>
+    </div>
+    <script type="text/javascript" src="./asset/js/materialize.js"></script>
+    <script type="text/javascript" src="./asset/js/brain-browser.js"></script>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

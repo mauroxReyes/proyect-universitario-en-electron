@@ -1,0 +1,52 @@
+{
+  "name": "enupal-electron",
+  "version": "1.0.0",
+  "description": "The enupal feed blog",
+  "main": "./main.js",
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "electronVersion": "1.00",
+  "author": "Enupal <info@enupal.com>",
+  "license": "MIT",
+  "build": {
+    "appId": "enupal-electronv2",
+    "asar": true,
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    }
+  },
+  "dependencies": {
+    "mysql": "^2.13.0",
+    "pretty-bytes": "^4.0.2"
+  },
+  "devDependencies": {
+    "@tensorflow/tfjs": "^3.13.0",
+    "axios": "^0.25.0",
+    "electron": "7.0.0"
+  }
+}
